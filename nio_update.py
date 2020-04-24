@@ -1,7 +1,7 @@
 from typing import Optional, Callable, Union, Dict, Any,Tuple
 from nio.crypto import AsyncDataT
-
-from nio import UploadResponse, UploadError
+from nio.client.async_client import logged_in
+from nio import UploadResponse, UploadError, AsyncClient
 import asyncio
 from nio import ErrorResponse, Api
 from aiohttp.client_exceptions import ClientConnectionError
