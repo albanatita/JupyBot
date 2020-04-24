@@ -1,0 +1,6 @@
+version: 1.0
+homeserver: matrix.alkemata.com
+name: JupyBot1
+password: changeme 
+gateway_address: 0.0.0.0:8888
+
