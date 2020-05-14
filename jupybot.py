@@ -100,8 +100,8 @@ class kernelGatewayComm:
         kernel_list_values = [y['id'] for y in kernel_list]
         delete=[key for key, value in self.kernels.items() if value not in kernel_list_values]
         for key in delete: del self.kernels[key]
-        for kernel in self.kernels.keys:
-            self.matrixComm.sendText(kernel)
+        for kernel in self.kernels.keys():
+           await self.matrixComm.sendText(room_id,kernel+' is connected')
 
     async def startKernel(self,kernelID,room_id):
         logging.debug('kernelID: '+ kernelID)
@@ -272,5 +272,5 @@ async def main():
                                 print_help(synapse,room_id)
                             if command==command_status_kernel:
                                 logging.debug('asking for kernel status')
-                                await kernelComm.statusKernel()
+                                await kernelComm.statusKernel(room_id)
 asyncio.run(main())
